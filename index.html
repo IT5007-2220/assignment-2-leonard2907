@@ -1,0 +1,77 @@
+<html>
+
+<head>
+    <title>Singapore High-Speed Intercontinental</title>
+    <link rel="stylesheet" type="text/css" href="style.css" />
+    <script src="app.js"></script>
+</head>
+
+<body>
+    <div class="page_title">
+        <p>Singapore High-Speed Intercontinental</p>
+
+        <!-- Navigation Bar -->
+        <div class="tab">
+            <button id="hometab" class="tablinks" onclick="openTab(event, 'Home')">Home</button>
+            <button class="tablinks" onclick="openTab(event, 'Book')">Book</button>
+            <button class="tablinks" onclick="openTab(event, 'Cancel')">Cancel</button>
+            <button class="tablinks" onclick="openTab(event, 'Display')">Display</button>
+        </div>
+    </div>
+
+    <!-- Home Tab -->
+    <div id="Home" class="tabcontent">
+        <h1 style="text-align:center">Reservation System</h2>
+        <h1 style="text-align:center" id="availableSlots"></h2>
+    </div>
+
+    <!-- Booking Tab -->
+    <div style="text-align: center;" id="Book" class="tabcontent">
+        <!-- Booking Form -->
+        <form id="bookingForm">
+            <label for="name">Name</label><br>
+            <input type="text" id="name" name="name"><br>
+            <label for="phoneNumber">Phone Number</label><br>
+            <input type="text" id="phoneNumber" name="phoneNumber">
+        </form>
+        <button class="submit_button" onclick="book()">Book</button>
+    </div>
+
+    <!-- Cancel Tab -->
+    <div style="text-align: center;" id="Cancel" class="tabcontent">
+        <!-- Cancellation Form -->
+        <form id="cancelForm">
+            <label for="reservationNumber">Reservation Number</label><br>
+            <input type="text" id="reservationNumber" name="reservationNumber">
+        </form>
+
+        <button class="submit_button" onclick="cancel()">Cancel</button>
+    </div>
+
+    <!-- Reservations -->
+    <div id="Display" class="tabcontent">
+        <div id="empty_state" style="display: block;">
+            <h1 style="text-align: center;">All 10 slots are available. No reservations have been made</h2>
+        </div>
+        <!-- Reservations -->
+        <div id="reservations_view">
+            <h2>Current Reservations</h2>
+            <table id="reservationsTable">
+                <tr id="0">
+                    <th style="width:5%">Number</th>
+                    <th>Name</th>
+                    <th>Phone Number</th>
+                    <th>Time Booking Made</th>
+                </tr>
+            </table>
+        </div>
+    </div>
+
+
+    <!-- Footer -->
+    <footer>
+        <p>© 2022 Singapore High-Speed Intercontinental. All Rights Reserved</p>
+    </footer>
+</body>
+
+</html>
